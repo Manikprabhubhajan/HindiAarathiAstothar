@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>अष्टोत्तरशतनामावलिः, आरात्या </title>
+  <style>
+    body {
+      font-family: 'Noto Sans Telugu', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      background-color:#FFEFD5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .top-center {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .top-center img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .top-center h1 {
+      color: #8e44ad;
+      font-size: 2em;
+      margin: 20px 0 10px;
+    }
+
+    .top-center input[type="text"] {
+      width: 100%;
+      max-width: 600px;
+      font-size: 1em;
+      padding: 12px;
+      margin: 20px auto;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    h3 {
+      color: maroon;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.4em;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      font-size: 1.1em;
+      color: #2980b9;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .top-center h1 {
+        font-size: 1.6em;
+      }
+
+      .top-center input[type="text"] {
+        font-size: 1em;
+        padding: 10px;
+      }
+
+      a {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Centered Top Section -->
+    <div class="top-center">
+        <img src="1.png" alt="Reduced Image" style="width:35%; height:auto;">
+      <h1>अष्टोत्तरशतनामावलिः, आरात्या</h1>
+      <input type="text" id="search" placeholder="गूगल कीपैड से हिंदी में भजन खोजें..." onkeyup="filterSongs()">
+    </div>
+
+    <!-- Bhajan List -->
+    <ul id="songList">
+      <li>
+        <a href="docs/1.png" target="_blank" style="color: maroon; font-size: 20px; font-weight: bold;">
+          1. श्रीमाणिक्यप्रभु अष्टोत्तरशतनामावलिः</a></li>
+  <li><a href="docs/2.pdf" target="_blank" style="color: maroon; font-size: 20px; font-weight: bold;">
+          2. श्रीव्यंकमाम्बा कुङ्कमाष्टकस्तोत्रम्</a></li>
+ <li> <a href="docs/3.pdf" target="_blank" style="color: maroon; font-size: 20px; font-weight: bold;">
+          3. श्रीव्यंकमाम्बा अष्टोत्तरशतनामावलिः</a></li>
+  <li><a href="docs/4.pdf" target="_blank" style="color: maroon; font-size: 20px; font-weight: bold;">
+          4. आरात्या</a></li>
+ <li><a href="docs/5.pdf" target="_blank">5. प्रार्थना (घालीन लोटांगण वंदीन चरण)</a></li>
+<li><a href="docs/6.pdf" target="_blank">6. अष्टक शनिवारचे</a></li>
+<li><a href="docs/7.pdf" target="_blank">7. अष्टक गुरुवारचे</a></li>
+
+    <li>      
+ <a href="docs/8.pdf" target="_blank" style="color: maroon; font-size: 20px; font-weight: bold;">
+         8. उपदेश रत्नमाला ।।
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <script>
+    function filterSongs() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const ul = document.getElementById('songList');
+      const li = ul.getElementsByTagName('li');
+      for (let i = 0; i < li.length; i++) {
+        const a = li[i].getElementsByTagName('a')[0];
+        const txtValue = a.textContent || a.innerText;
+        li[i].style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
